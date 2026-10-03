@@ -1,0 +1,19 @@
+<footer class="footer">
+  <button type="button" class="footer__privacy-link" (click)="openPrivacy()">
+    {{ 'footer.privacy' | translate }}
+  </button>
+  <span class="footer__sep" aria-hidden="true">/</span>
+  <span class="footer__copy">© {{ year }} Caio Souza Silva</span>
+</footer>
+
+@if (privacyOpen) {
+  <app-modal
+    [title]="'footer.privacyTitle' | translate"
+    [closeOnly]="true"
+    (cancelled)="closePrivacy()"
+  >
+    <p class="footer__privacy-p">{{ 'footer.privacyLine1' | translate }}</p>
+    <p class="footer__privacy-p">{{ 'footer.privacyLine2' | translate }}</p>
+    <p class="footer__privacy-p">{{ 'footer.privacyLine3' | translate }}</p>
+  </app-modal>
+}

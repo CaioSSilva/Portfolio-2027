@@ -1,0 +1,102 @@
+<div class="home">
+  <div class="home__left">
+    <h1 class="home__name">
+      <span>Caio</span>
+      <span>Souza</span>
+      <span>Silva</span>
+    </h1>
+  </div>
+
+  <div class="home__right">
+    <p class="home__tagline">{{ 'home.tagline' | translate }}</p>
+    <app-shadow-button
+      variant="dark"
+      [label]="'about.cvBtn' | translate"
+      padding="clamp(11px, 1vw, 15px) clamp(28px, 2.5vw, 40px)"
+      class="home__cta"
+      (clicked)="openCvModal()"
+    />
+  </div>
+
+  <svg
+    class="home__svg home__svg--desktop"
+    viewBox="0 0 1200 500"
+    preserveAspectRatio="none"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      #pathLeft
+      class="home__path"
+      d="M -10 180 C 120 180, 240 185, 300 240 C 360 300, 300 435, 350 435 C 410 435, 480 365, 550 325"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      vector-effect="non-scaling-stroke"
+    />
+
+    <path
+      #pathRight
+      class="home__path"
+      d="M 650 335 C 750 415, 930 460, 1150 340"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      vector-effect="non-scaling-stroke"
+    />
+
+    <ellipse #ball class="home__ball" />
+  </svg>
+
+  <svg
+    class="home__svg home__svg--mobile"
+    viewBox="0 0 400 700"
+    preserveAspectRatio="none"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      #pathLeftMobile
+      class="home__path"
+      d="M -10 100 C 60 100, 130 105, 170 145 C 210 185, 175 270, 200 270 C 230 270, 270 220, 310 195"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      vector-effect="non-scaling-stroke"
+    />
+
+    <path
+      #pathRightMobile
+      class="home__path"
+      d="M 90 490 C 140 530, 250 550, 390 480"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      vector-effect="non-scaling-stroke"
+    />
+
+    <ellipse #ballMobile class="home__ball" />
+  </svg>
+</div>
+
+@if (cvModalOpen) {
+  <app-modal
+    [title]="'about.cvModal.title' | translate"
+    [description]="'about.cvModal.desc' | translate"
+    [closeOnly]="true"
+    (cancelled)="closeCvModal()"
+  >
+    <div class="home__cv-modal-actions">
+      <a
+        class="home__cv-modal-btn"
+        [href]="'about.cvModal.ptUrl' | translate"
+        [download]="'about.cvModal.ptDownload' | translate"
+      >
+        {{ 'about.cvModal.ptLabel' | translate }}
+      </a>
+      <a
+        class="home__cv-modal-btn home__cv-modal-btn--secondary"
+        [href]="'about.cvModal.enUrl' | translate"
+        [download]="'about.cvModal.enDownload' | translate"
+      >
+        {{ 'about.cvModal.enLabel' | translate }}
+      </a>
+    </div>
+  </app-modal>
+}

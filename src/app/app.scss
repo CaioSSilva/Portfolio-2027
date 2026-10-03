@@ -1,0 +1,8 @@
+@use './styles/constants.scss';
+
+.container {
+  box-sizing: border-box;
+  padding: constants.$default-padding;
+  min-height: calc(100vh - constants.$default-padding * 2);
+  width: 100%;
+}

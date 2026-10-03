@@ -1,0 +1,105 @@
+@use '../../../styles/constants.scss';
+
+:host {
+  display: inline-block;
+  box-sizing: border-box;
+
+  &.full-width {
+    display: block;
+    width: 100%;
+  }
+}
+
+.shadow-btn {
+  position: relative;
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0 4px 4px 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  box-sizing: border-box;
+
+  &--full {
+    display: block;
+    width: 100%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 4px;
+    bottom: 4px;
+    background: var(--shadow-color, constants.$default-white);
+    z-index: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  &__front {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    padding: 10px 18px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    width: 100%;
+    color: constants.$default-white;
+    transform: translate(4px, 4px);
+    transition: transform 0.2s ease;
+
+    fa-icon {
+      font-size: 16px;
+      color: currentColor;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &:hover:not(:disabled):not(.shadow-btn--disabled) {
+    &::before {
+      opacity: 0;
+    }
+
+    .shadow-btn__front {
+      transform: translate(0, 0);
+    }
+  }
+
+  &:disabled,
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    .shadow-btn__front {
+      transform: translate(4px, 4px);
+    }
+  }
+
+  &--primary .shadow-btn__front {
+    background: constants.$light-blue;
+    color: constants.$default-white;
+  }
+
+  &--dark .shadow-btn__front {
+    background: constants.$dark-blue;
+    color: constants.$default-white;
+  }
+
+  &--secondary .shadow-btn__front {
+    background: constants.$darkest-blue;
+    color: constants.$default-white;
+  }
+}

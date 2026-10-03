@@ -1,0 +1,40 @@
+@if (!loader.done()) {
+  <div class="container">
+    <div class="balls">
+      <div #circleDark class="circle circle--dark"></div>
+      <div #circleLight class="circle circle--light"></div>
+      <span #otterImg class="otter-icon">
+        <fa-icon [icon]="faOtter" />
+      </span>
+    </div>
+
+    <div class="loader">
+      <div #barDark class="bar bar--dark"></div>
+      <div #barLight class="bar bar--light">
+        <div class="percentage-bg">
+          <div class="percentage" [style.width.%]="loader.progress()"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="loading-title">
+      <div #titleLight class="title-card title-card--light"></div>
+      <div #titleDark class="title-card title-card--dark">
+        @for (letter of letters(); track $index) {
+          <span #letterEl class="letter">{{ letter }}</span>
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <app-top-bar></app-top-bar>
+  <div id="home"><app-home></app-home></div>
+  <div id="about" class="about-row">
+    <app-about></app-about>
+    <app-about-slider></app-about-slider>
+  </div>
+  <div id="projects"><app-projects></app-projects></div>
+  <div id="career"><app-career></app-career></div>
+  <div id="contact"><app-contact></app-contact></div>
+  <app-footer></app-footer>
+}

@@ -1,0 +1,21 @@
+$default-white: #f3f3f3;
+$light-blue: #6f99d8;
+$dark-blue: #26559b;
+$darkest-blue: #02327b;
+$background: #eeeeee;
+
+$default-padding: 10px;
+
+$font-family: 'Syne', sans-serif;
+$font-size-base: 13px;
+$font-size-lg: 32px;
+
+@mixin font-base {
+  font-family: $font-family;
+  font-size: $font-size-base;
+}
+
+@mixin font-lg {
+  font-family: $font-family;
+  font-size: $font-size-lg;
+}

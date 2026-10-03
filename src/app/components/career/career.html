@@ -1,0 +1,96 @@
+<section id="experience" class="experience">
+  <div class="experience__header">
+    <div class="experience__title-btn">
+      <h2 class="experience__title-shadow">{{ 'experience.title' | translate }}</h2>
+      <h2 class="experience__title-text">{{ 'experience.title' | translate }}</h2>
+      <span class="experience__title-icon" aria-hidden="true">
+        <fa-icon [icon]="faBriefcase" />
+      </span>
+    </div>
+  </div>
+
+  <div class="experience__tree">
+    <div class="experience__group">
+      <div class="experience__group-label">
+        <fa-icon [icon]="faBriefcase" />
+        <span>{{ 'experience.workLabel' | translate }}</span>
+      </div>
+
+      <div class="experience__branch">
+        @for (i of jobs; track i) {
+          <div class="experience__node">
+            <div class="experience__node-line"></div>
+            <div class="experience__node-dot"></div>
+            <div class="experience__card" [class.experience__card--light]="i % 2 === 1">
+              <div class="experience__card-header">
+                <span class="experience__role">{{
+                  'experience.jobs.' + i + '.role' | translate
+                }}</span>
+                <span class="experience__company">{{
+                  'experience.jobs.' + i + '.company' | translate
+                }}</span>
+              </div>
+              <div class="experience__card-meta">
+                <span class="experience__period">
+                  <fa-icon [icon]="faCalendar" />
+                  {{ 'experience.jobs.' + i + '.period' | translate }}
+                </span>
+                <span class="experience__location">
+                  <fa-icon [icon]="faLocationDot" />
+                  {{ 'experience.jobs.' + i + '.location' | translate }}
+                </span>
+              </div>
+              <ul class="experience__bullets">
+                @for (b of toBullets(jobBullets[i]); track b) {
+                  <li>{{ 'experience.jobs.' + i + '.bullets.' + b | translate }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="experience__group">
+      <div class="experience__group-label">
+        <fa-icon [icon]="faGraduationCap" />
+        <span>{{ 'experience.educationLabel' | translate }}</span>
+      </div>
+
+      <div class="experience__branch">
+        @for (i of education; track i) {
+          <div class="experience__node">
+            <div class="experience__node-line"></div>
+            <div class="experience__node-dot"></div>
+            <div class="experience__card" [class.experience__card--light]="i % 2 === 0">
+              <div class="experience__card-header">
+                <span class="experience__role">{{
+                  'experience.education.' + i + '.degree' | translate
+                }}</span>
+                <span class="experience__company">{{
+                  'experience.education.' + i + '.institution' | translate
+                }}</span>
+              </div>
+              <div class="experience__card-meta">
+                <span class="experience__period">
+                  <fa-icon [icon]="faCalendar" />
+                  {{ 'experience.education.' + i + '.period' | translate }}
+                </span>
+                <span class="experience__location">
+                  <fa-icon [icon]="faLocationDot" />
+                  {{ 'experience.education.' + i + '.location' | translate }}
+                </span>
+              </div>
+              <ul class="experience__bullets">
+                @for (b of toBullets(educationBullets[i]); track b) {
+                  <li>{{ 'experience.education.' + i + '.bullets.' + b | translate }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

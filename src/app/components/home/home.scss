@@ -1,0 +1,185 @@
+@use '../../styles/constants.scss';
+
+.home {
+  position: relative;
+  display: flex;
+  height: clamp(500px, 46vw, 720px);
+  width: 100%;
+  margin-top: 10px;
+  background: constants.$light-blue;
+  overflow: hidden;
+  font-family: constants.$font-family;
+
+  &__left,
+  &__right {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: clamp(50px, 6.5vw, 110px);
+    line-height: 1.05;
+    font-weight: 800;
+    color: constants.$default-white;
+    user-select: none;
+  }
+
+  &__right {
+    gap: clamp(48px, 2.5vw, 52px);
+  }
+
+  &__tagline {
+    margin: 0;
+    font-size: clamp(24px, 3.8vw, 56px);
+    font-weight: 400;
+    color: constants.$default-white;
+    line-height: 1.25;
+    white-space: pre-line;
+  }
+
+  &__cta {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: constants.$font-family;
+
+    &:hover .home__cta-text {
+      transform: translate(0, 0);
+    }
+  }
+
+  &__cta-shadow,
+  &__cta-text {
+    font-size: clamp(16px, 1.5vw, 21px);
+    font-weight: 600;
+    white-space: nowrap;
+    padding: clamp(11px, 1vw, 15px) clamp(28px, 2.5vw, 40px);
+  }
+
+  &__cta-shadow {
+    display: block;
+    color: transparent;
+    background: constants.$default-white;
+  }
+
+  &__cta-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: constants.$default-white;
+    background: constants.$dark-blue;
+    transform: translate(4px, 4px);
+    transition: transform 0.2s ease;
+  }
+
+  &__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__svg--mobile {
+    display: none;
+  }
+
+  &__path {
+    stroke: constants.$dark-blue;
+  }
+
+  &__ball {
+    fill: constants.$dark-blue;
+    pointer-events: none;
+  }
+
+  &__cv-modal-actions {
+    display: flex;
+    gap: clamp(10px, 1vw, 16px);
+  }
+
+  &__cv-modal-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 14px;
+    font-family: constants.$font-family;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+    background: constants.$light-blue;
+    color: constants.$default-white;
+
+    &:active {
+      transform: scale(0.97);
+    }
+
+    &:hover {
+      opacity: 0.88;
+    }
+
+    &--secondary {
+      background: rgba(constants.$default-white, 0.12);
+      border: 1.5px solid rgba(constants.$default-white, 0.3);
+
+      &:hover {
+        background: rgba(constants.$default-white, 0.2);
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: 700px;
+
+    &__left,
+    &__right {
+      flex: none;
+      height: 50%;
+      padding: 0 24px;
+      justify-content: center;
+    }
+
+    &__name {
+      font-size: clamp(48px, 14vw, 80px);
+    }
+
+    &__tagline {
+      font-size: clamp(22px, 7vw, 38px);
+      text-align: center;
+      margin-top: -65px;
+    }
+
+    &__svg--desktop {
+      display: none;
+    }
+
+    &__svg--mobile {
+      display: block;
+    }
+  }
+}
+

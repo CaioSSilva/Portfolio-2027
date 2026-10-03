@@ -1,0 +1,28 @@
+<div class="bar">
+  <div class="css-title">
+    <span class="css-title__back">CSS</span>
+    <span class="css-title__front">CSS</span>
+  </div>
+
+  <div class="bar__divider"></div>
+
+  <span class="bar__headline">{{ 'topBar.headline' | translate }}</span>
+
+  <div class="bar__divider bar__divider--grow"></div>
+
+  <nav class="bar__nav">
+    <a class="bar__link" href="#home">{{ 'topBar.nav.home' | translate }}</a>
+    <a class="bar__link" href="#about">{{ 'topBar.nav.about' | translate }}</a>
+    <a class="bar__link" href="#projects">{{ 'topBar.nav.projects' | translate }}</a>
+    <a class="bar__link" href="#career">{{ 'topBar.nav.experience' | translate }}</a>
+    <a class="bar__link" href="#contact">{{ 'topBar.nav.contact' | translate }}</a>
+  </nav>
+
+  <app-shadow-button
+    href="#contact"
+    variant="primary"
+    [label]="'topBar.cta' | translate"
+    padding="6px 18px"
+    class="bar__cta"
+  />
+</div>

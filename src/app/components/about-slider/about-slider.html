@@ -1,0 +1,57 @@
+<div class="about-slider">
+  <div class="about-slider__viewport">
+    <div class="about-slider__track" [style.transform]="'translateX(-' + slide() * 100 + '%)'">
+      <div class="about-slider__slide about-slider__slide--blank"></div>
+
+      <div class="about-slider__slide about-slider__slide--os">
+        <app-slider-window
+          imageSrc="images/cai-os.png"
+          imageAlt="cai-os"
+          [href]="osUrl"
+          (itemClick)="handleItemClick($event, osUrl)"
+        />
+      </div>
+
+      <div class="about-slider__slide about-slider__slide--room">
+        <app-slider-window
+          imageSrc="images/the-room.png"
+          imageAlt="the-room"
+          [href]="roomUrl"
+          (itemClick)="handleItemClick($event, roomUrl)"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="about-slider__dots">
+    <button
+      class="about-slider__dot"
+      [class.about-slider__dot--active]="slide() === 0"
+      (click)="goTo(0)"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      class="about-slider__dot"
+      [class.about-slider__dot--active]="slide() === 1"
+      (click)="goTo(1)"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      class="about-slider__dot"
+      [class.about-slider__dot--active]="slide() === 2"
+      (click)="goTo(2)"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+
+  @if (isModalOpen()) {
+    <app-modal
+      [title]="'about.modal.title' | translate"
+      [description]="'about.modal.description' | translate"
+      [confirmText]="'about.modal.confirm' | translate"
+      [cancelText]="'about.modal.cancel' | translate"
+      (confirmed)="confirmOpenTarget()"
+      (cancelled)="closeModal()"
+    />
+  }
+</div>

@@ -1,0 +1,117 @@
+@use '../../../styles/constants.scss';
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+}
+
+.modal-card {
+  position: relative;
+  background: constants.$dark-blue;
+  border: 2px solid constants.$light-blue;
+  padding: clamp(24px, 5vw, 48px) clamp(16px, 4vw, 44px);
+  max-width: clamp(320px, 90vw, 480px);
+  width: 100%;
+  color: constants.$default-white;
+  font-family: constants.$font-family;
+  box-shadow: 6px 6px 0 constants.$darkest-blue;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 3vw, 22px);
+  animation: modal-pop 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: rgba(constants.$default-white, 0.6);
+    font-size: clamp(16px, 4vw, 22px);
+    line-height: 1;
+    padding: 4px;
+    cursor: pointer;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: constants.$default-white;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: clamp(18px, 4.5vw, 24px);
+    font-weight: 700;
+    color: constants.$default-white;
+    text-align: center;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.55;
+    color: rgba(constants.$default-white, 0.8);
+    text-align: center;
+  }
+
+  &__actions {
+    display: flex;
+    gap: clamp(10px, 3vw, 16px);
+    margin-top: 4px;
+  }
+
+  &__btn {
+    flex: 1;
+    padding: clamp(11px, 2.5vw, 14px) clamp(14px, 3vw, 18px);
+    font-family: constants.$font-family;
+    font-size: clamp(12px, 3.5vw, 14px);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition:
+      transform 0.15s ease,
+      opacity 0.15s ease;
+
+    &:active {
+      transform: scale(0.97);
+    }
+
+    &--cancel {
+      background: rgba(constants.$default-white, 0.12);
+      color: constants.$default-white;
+      border: 1.5px solid rgba(constants.$default-white, 0.3);
+
+      &:hover {
+        background: rgba(constants.$default-white, 0.2);
+      }
+    }
+
+    &--confirm {
+      background: constants.$light-blue;
+      color: constants.$default-white;
+
+      &:hover {
+        opacity: 0.88;
+      }
+    }
+  }
+}
+
+@keyframes modal-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.93) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

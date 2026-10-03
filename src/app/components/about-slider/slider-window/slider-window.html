@@ -1,0 +1,29 @@
+<a
+  class="slider-window"
+  [href]="href()"
+  (click)="handleClick($event)"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <div class="slider-window__body">
+    <div class="slider-window__bar">
+      <span class="slider-window__dot"></span>
+      <span class="slider-window__dot"></span>
+      <span class="slider-window__dot"></span>
+    </div>
+    <div class="slider-window__content">
+      <img [src]="imageSrc()" [alt]="imageAlt()" draggable="false" />
+    </div>
+  </div>
+  <span class="slider-window__cursor" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        class="slider-window__cursor-path"
+        d="M4 2L4 18L8.5 14L11.5 21L13.5 20L10.5 13L16 13L4 2Z"
+        fill="white"
+        stroke-width="1.2"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </span>
+</a>

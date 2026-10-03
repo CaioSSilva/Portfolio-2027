@@ -1,0 +1,121 @@
+@use '../../styles/constants.scss';
+
+.bar {
+  @include constants.font-base;
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  background: constants.$dark-blue;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: constants.$default-white;
+
+  &__divider {
+    height: 1px;
+    width: 40px;
+    background: constants.$default-white;
+    flex-shrink: 0;
+
+    &--grow {
+      flex: 1;
+      width: auto;
+    }
+  }
+
+  &__headline {
+    font-weight: 600;
+    white-space: nowrap;
+    user-select: none;
+    opacity: 0.85;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+  }
+
+  &__link {
+    white-space: nowrap;
+    color: constants.$default-white;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 -3px;
+      height: 1.5px;
+      background: constants.$default-white;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__cta {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .bar__headline {
+    display: none;
+  }
+
+  .bar__divider:not(.bar__divider--grow) {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .bar {
+    padding: 0 12px;
+    gap: 12px;
+  }
+
+  .bar__divider--grow {
+    display: block;
+    flex: 1;
+  }
+
+  .bar__nav {
+    display: none;
+  }
+}
+
+.css-title {
+  position: relative;
+  flex-shrink: 0;
+  user-select: none;
+
+  &__back,
+  &__front {
+    @include constants.font-lg;
+    font-weight: 800;
+  }
+
+  &__back {
+    color: constants.$light-blue;
+  }
+
+  &__front {
+    position: absolute;
+    inset: 0;
+    color: constants.$default-white;
+    transform: translate(2px, 0);
+  }
+}

@@ -1,0 +1,28 @@
+<div class="modal-backdrop" (click)="onCancel()">
+  <div class="modal-card" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
+    @if (closeOnly()) {
+      <button type="button" class="modal-card__close" (click)="onCancel()" aria-label="Fechar">
+        <fa-icon [icon]="faXmark" />
+      </button>
+    }
+    <h3 class="modal-card__title">{{ title() }}</h3>
+    @if (description()) {
+      <p class="modal-card__description">{{ description() }}</p>
+    }
+
+    <ng-content />
+
+    @if (!closeOnly()) {
+      <div class="modal-card__actions">
+        @if (showCancel()) {
+          <button type="button" class="modal-card__btn modal-card__btn--cancel" (click)="onCancel()">
+            {{ cancelText() }}
+          </button>
+        }
+        <button type="button" class="modal-card__btn modal-card__btn--confirm" (click)="onConfirm()">
+          {{ confirmText() }}
+        </button>
+      </div>
+    }
+  </div>
+</div>

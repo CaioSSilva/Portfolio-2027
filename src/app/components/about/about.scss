@@ -1,0 +1,105 @@
+@use '../../styles/constants.scss';
+
+.about {
+  flex: 1;
+  margin-top: 10px;
+  box-sizing: border-box;
+  background: constants.$dark-blue;
+  font-family: constants.$font-family;
+  display: flex;
+  flex-direction: column;
+
+  &__inner {
+    padding: clamp(24px, 4vw, 50px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__title {
+    margin: 0 0 clamp(20px, 3.5vw, 36px);
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 800;
+    color: constants.$default-white;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0 0 clamp(16px, 2.5vw, 24px);
+    font-size: clamp(14px, 1.5vw + 8px, 20px);
+    font-weight: 400;
+    color: constants.$default-white;
+    line-height: 1.7;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__strike {
+    text-decoration: line-through;
+  }
+
+  &__underline {
+    text-decoration: underline;
+  }
+
+  &__signature {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: clamp(24px, 4.5vw, 44px);
+  }
+
+  &__signature-right {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+  }
+
+  &__signature-label {
+    font-size: clamp(14px, 1.5vw + 8px, 20px);
+    font-weight: 700;
+    color: constants.$default-white;
+    transition: opacity 0.3s ease;
+  }
+
+  &__signature-arrow {
+    width: clamp(36px, 6vw, 76px);
+    height: auto;
+    
+    &--mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    &__signature {
+      justify-content: center;
+    }
+
+    &__signature-right {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &__signature-label {
+      text-align: center;
+    }
+
+    &__signature-arrow {
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        display: block;
+      }
+    }
+  }
+}

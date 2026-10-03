@@ -1,0 +1,65 @@
+<section class="projects">
+  <div class="projects__header">
+    <div class="projects__title-btn">
+      <h2 class="projects__title-shadow">{{ 'projects.title' | translate }}</h2>
+      <h2 class="projects__title-text">{{ 'projects.title' | translate }}</h2>
+      <span class="projects__title-icon" aria-hidden="true">
+        <fa-icon [icon]="faGithub" />
+      </span>
+    </div>
+  </div>
+
+  <div class="projects__carousel">
+    <div class="projects__track" #track>
+      @for (project of projects(); track project.name) {
+        <div class="projects__card-btn">
+          <div class="projects__card projects__card--shadow" aria-hidden="true"></div>
+          <a
+            class="projects__card projects__card--front"
+            [href]="project.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable="false"
+          >
+            <div class="projects__card-top">
+              <span class="projects__card-name">{{ project.name }}</span>
+              <p class="projects__card-desc">{{ project.description }}</p>
+            </div>
+            <div class="projects__card-footer">
+              <span class="projects__card-lang">
+                <span class="projects__card-lang-dot"></span>
+                {{ project.language }}
+              </span>
+              <span class="projects__card-stars">
+                <fa-icon [icon]="faStar" />
+                {{ project.stars }}
+              </span>
+            </div>
+          </a>
+        </div>
+      }
+
+      <div class="projects__card-btn projects__card-btn--see-all">
+        <div
+          class="projects__card projects__card--see-all projects__card--shadow"
+          aria-hidden="true"
+        ></div>
+        <a
+          class="projects__card projects__card--see-all projects__card--front"
+          [href]="githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          draggable="false"
+        >
+          <fa-icon [icon]="faTableCells" />
+          <span>{{ 'projects.seeAll' | translate }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects__hint">
+    <span>{{ 'projects.dragHint' | translate }}</span>
+    <fa-icon [icon]="faArrowRight" />
+  </div>
+</section>

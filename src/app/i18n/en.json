@@ -1,0 +1,133 @@
+{
+  "experience": {
+    "title": "Career",
+    "workLabel": "Work Career",
+    "educationLabel": "Education",
+    "jobs": {
+      "0": {
+        "role": "Frontend Developer",
+        "company": "IBM Brasil",
+        "period": "March 2025 – Present",
+        "location": "Belo Horizonte, MG – Remote",
+        "bullets": {
+          "0": "Web application development using Angular and TypeScript",
+          "1": "Frontend role on the Open Cash Hub Bradesco project – financial management platform with payments, receivables, bank reconciliation and real-time cash flow",
+          "2": "Implementation of reusable components and integration with RESTful APIs",
+          "3": "Responsive development focused on user experience and accessibility",
+          "4": "Collaboration in Agile/Scrum environment with multidisciplinary teams"
+        }
+      },
+      "1": {
+        "role": "Development Intern",
+        "company": "IBM Brasil",
+        "period": "August 2022 – March 2025",
+        "location": "Belo Horizonte, MG – Remote",
+        "bullets": {
+          "0": "Salesforce development (Apex, Lightning Web Components) with direct impact on client satisfaction",
+          "1": "QA (Quality Assurance) role in Salesforce, ensuring code quality and deadline compliance",
+          "2": "Development and maintenance of frontend applications with React and React Native",
+          "3": "Implementation of new features and code optimisation for performance",
+          "4": "Ensuring robustness and security in developed solutions"
+        }
+      }
+    },
+    "education": {
+      "0": {
+        "degree": "Bachelor's in Computer Science",
+        "institution": "Universidade FUMEC",
+        "period": "2022 – 2026",
+        "location": "Belo Horizonte, MG",
+        "bullets": {
+          "0": "Data Structures, Algorithms and Object-Oriented Programming",
+          "1": "Databases, Operating Systems and Software Engineering",
+          "2": "Web Development and industry-applied disciplines"
+        }
+      },
+      "1": {
+        "degree": "Master's Degree in",
+        "institution": "...",
+        "period": "Coming soon...",
+        "location": "Who knows",
+        "bullets": {
+          "0": "Still deciding which field will get my energy next"
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "seeAll": "See All",
+    "dragHint": "Drag sideways",
+    "noDescription": "No description",
+    "noLanguage": "Not defined"
+  },
+  "loader": {
+    "loading": "LOADING"
+  },
+  "topBar": {
+    "headline": "Your next Front-End Developer",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "experience": "Career",
+      "contact": "Contact"
+    },
+    "cta": "Contact Me"
+  },
+  "home": {
+    "tagline": "Experience,\nExcellence and\nEmpathy.",
+    "cta": "Projects"
+  },
+  "about": {
+    "title": "About",
+    "p1": "I've always been passionate about technology and computing whether taking apart my toys, fixing phones, or sticking my finger in a socket",
+    "p1Strike": "(that last one I don't recommend)",
+    "p2": "This is what I wake up and fall asleep thinking about. I want my ideas and creations to help people make",
+    "p2Underline": "a real difference!",
+    "p3": "I hold a degree in",
+    "p3Underline": "Computer Science",
+    "p3Cont": "and with my years of industry experience, I create value for my clients through respect, innovation and creativity.",
+    "p4": "Like what you see? Check out my projects!",
+    "cvBtn": "Download CV",
+    "cvModal": {
+      "title": "Download CV",
+      "desc": "Choose the language of the CV:",
+      "ptLabel": "🇧🇷 Português",
+      "enLabel": "🇺🇸 English",
+      "ptDownload": "Currículo - Caio Souza Silva.pdf",
+      "enDownload": "Resume - Caio Souza Silva.pdf",
+      "ptUrl": "/docs/Curriculo.pdf",
+      "enUrl": "/docs/Resume.pdf"
+    },
+    "signatureLabel": "That's me",
+    "signatureLabelOs": "This is my OS",
+    "signatureLabelRoom": "This is my room",
+    "modal": {
+      "title": "Compatibility Notice",
+      "description": "This project was designed specifically for larger screens and is not fully optimized for mobile devices. We recommend opening it on a computer for the best experience.",
+      "confirm": "Open anyway",
+      "cancel": "Go back"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's connect?",
+    "desc": "I'm always open to new opportunities, collaborations on exciting projects, or just a good chat. Feel free to send me a message!",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "What should I call you?",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "your.email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "send": "Send Message",
+    "sent": "Message Ready!"
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "privacyTitle": "Privacy",
+    "privacyLine1": "Welcome to the internet in 2026. Yes, I collect your data. Clicks, scrolls, hesitations — all logged.",
+    "privacyLine2": "Cookies? Already installed. Your browser fingerprint sold to three brokers before you finished loading.",
+    "privacyLine3": "There is no privacy."
+  }
+}

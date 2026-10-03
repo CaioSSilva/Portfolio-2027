@@ -1,0 +1,291 @@
+@use '../../styles/constants.scss';
+
+.projects {
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
+  font-family: constants.$font-family;
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-top: 16px;
+  }
+
+  &__title-btn {
+    position: relative;
+    display: inline-block;
+    padding: 0 5px 5px 0;
+  }
+
+  &__title-shadow,
+  &__title-text {
+    margin: 0;
+    padding: 10px 28px;
+    font-size: clamp(22px, 2.5vw, 36px);
+    font-weight: 800;
+    color: constants.$default-white;
+    user-select: none;
+  }
+
+  &__title-shadow {
+    display: block;
+    background: constants.$darkest-blue;
+    color: transparent;
+  }
+
+  &__title-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: constants.$dark-blue;
+    transform: translate(5px, 5px);
+  }
+
+  &__title-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: constants.$light-blue;
+    border-radius: 50%;
+    position: absolute;
+    right: -18px;
+    top: -14px;
+    color: constants.$default-white;
+
+    fa-icon {
+      font-size: 18px;
+    }
+  }
+
+  &__carousel {
+    width: 100%;
+    background: constants.$light-blue;
+    padding: 20px 0 25px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  &__track {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 0 40px;
+    overflow-x: auto;
+    cursor: grab;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__card-btn {
+    position: relative;
+    flex: 0 0 285px;
+    height: 265px;
+    touch-action: pan-x;
+
+    &--see-all {
+      flex: 0 0 145px;
+    }
+  }
+
+  &__card {
+    box-sizing: border-box;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    touch-action: pan-x;
+
+    &--shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 260px;
+      background: constants.$darkest-blue;
+      border: 2px solid transparent;
+      pointer-events: none;
+    }
+
+    &--front {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 280px;
+      height: 260px;
+      background: constants.$dark-blue;
+      border: 2px solid rgba(constants.$default-white, 0.35);
+      transition:
+        top 0.2s ease,
+        left 0.2s ease,
+        border-color 0.2s ease;
+
+      &:hover {
+        top: 0;
+        left: 0;
+        border-color: constants.$default-white;
+      }
+    }
+
+    &-top {
+      padding: 20px 18px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &-name {
+      font-size: clamp(14px, 1.2vw, 16px);
+      font-weight: 700;
+      color: constants.$default-white;
+      word-break: break-word;
+    }
+
+    &-desc {
+      margin: 0;
+      font-size: clamp(12px, 1vw, 13px);
+      font-weight: 400;
+      color: rgba(constants.$default-white, 0.75);
+      line-height: 1.5;
+    }
+
+    &-footer {
+      padding: 12px 18px;
+      background: constants.$darkest-blue;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    &-lang {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: constants.$default-white;
+    }
+
+    &-lang-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: constants.$light-blue;
+      flex-shrink: 0;
+    }
+
+    &-stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: constants.$default-white;
+
+      fa-icon {
+        font-size: 11px;
+      }
+    }
+
+    &--see-all {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0;
+
+      &.projects__card--shadow {
+        background: constants.$darkest-blue;
+        width: 140px;
+        height: 260px;
+      }
+
+      &.projects__card--front {
+        background: constants.$darkest-blue;
+        width: 140px;
+        height: 260px;
+      }
+
+      fa-icon {
+        font-size: 26px;
+        color: constants.$default-white;
+      }
+
+      span {
+        font-size: 13px;
+        font-weight: 700;
+        color: constants.$default-white;
+        text-align: center;
+      }
+    }
+  }
+
+  &__hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding-bottom: 4px;
+
+    span {
+      font-size: 12px;
+      font-weight: 600;
+      color: constants.$default-white;
+      background: constants.$dark-blue;
+      border: 1.5px solid constants.$dark-blue;
+      padding: 5px 14px;
+    }
+
+    fa-icon {
+      font-size: 14px;
+      color: constants.$dark-blue;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__track {
+      padding: 0 20px;
+    }
+
+    &__card-btn {
+      flex: 0 0 235px;
+      height: 225px;
+
+      &--see-all {
+        flex: 0 0 115px;
+      }
+    }
+
+    &__card {
+      &--shadow,
+      &--front {
+        width: 230px;
+        height: 220px;
+      }
+
+      &--see-all {
+        &.projects__card--shadow,
+        &.projects__card--front {
+          width: 110px;
+          height: 220px;
+        }
+      }
+    }
+  }
+}

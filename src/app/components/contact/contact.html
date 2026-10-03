@@ -1,0 +1,128 @@
+<section id="contact" class="contact">
+  <div class="contact__header">
+    <div class="contact__title-btn">
+      <h2 class="contact__title-shadow">{{ 'contact.title' | translate }}</h2>
+      <h2 class="contact__title-text">{{ 'contact.title' | translate }}</h2>
+      <span class="contact__title-icon" aria-hidden="true">
+        <fa-icon [icon]="faEnvelope" />
+      </span>
+    </div>
+  </div>
+
+  <div class="contact__wrapper">
+    <div class="contact__info">
+      <h3 class="contact__subtitle">{{ 'contact.subtitle' | translate }}</h3>
+      <p class="contact__desc">{{ 'contact.desc' | translate }}</p>
+
+      <div class="contact__links">
+        <app-shadow-button
+          href="https://www.linkedin.com/in/caio-souza-silva/"
+          target="_blank"
+          variant="dark"
+          label="LinkedIn"
+          padding="10px 18px"
+          class="contact__social-btn"
+        >
+          <fa-icon [icon]="faLinkedin" />
+        </app-shadow-button>
+
+        <app-shadow-button
+          href="https://github.com/CaioSSilva"
+          target="_blank"
+          variant="dark"
+          label="GitHub"
+          padding="10px 18px"
+          class="contact__social-btn"
+        >
+          <fa-icon [icon]="faGithub" />
+        </app-shadow-button>
+
+        <app-shadow-button
+          href="https://www.instagram.com/caios_silvaa/"
+          target="_blank"
+          variant="dark"
+          label="Instagram"
+          padding="10px 18px"
+          class="contact__social-btn"
+        >
+          <fa-icon [icon]="faInstagram" />
+        </app-shadow-button>
+
+        <app-shadow-button
+          href="https://wa.me/5531981029638"
+          target="_blank"
+          variant="dark"
+          label="WhatsApp"
+          padding="10px 18px"
+          class="contact__social-btn"
+        >
+          <fa-icon [icon]="faWhatsapp" />
+        </app-shadow-button>
+      </div>
+    </div>
+
+    <form class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <div class="contact__field">
+        <label for="contact-name" class="contact__label">
+          <fa-icon [icon]="faUser" />
+          <span>{{ 'contact.nameLabel' | translate }}</span>
+        </label>
+        <input
+          id="contact-name"
+          name="name"
+          type="text"
+          class="contact__input"
+          [placeholder]="'contact.namePlaceholder' | translate"
+          [(ngModel)]="name"
+          maxlength="80"
+          required
+        />
+      </div>
+
+      <div class="contact__field">
+        <label for="contact-email" class="contact__label">
+          <fa-icon [icon]="faEnvelope" />
+          <span>{{ 'contact.emailLabel' | translate }}</span>
+        </label>
+        <input
+          id="contact-email"
+          name="email"
+          type="email"
+          class="contact__input"
+          [placeholder]="'contact.emailPlaceholder' | translate"
+          [(ngModel)]="email"
+          maxlength="120"
+          required
+        />
+      </div>
+
+      <div class="contact__field">
+        <label for="contact-message" class="contact__label">
+          <fa-icon [icon]="faMessage" />
+          <span>{{ 'contact.messageLabel' | translate }}</span>
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
+          rows="5"
+          class="contact__textarea"
+          [placeholder]="'contact.messagePlaceholder' | translate"
+          [(ngModel)]="message"
+          maxlength="2500"
+          required
+        ></textarea>
+      </div>
+
+      <app-shadow-button
+        type="submit"
+        variant="primary"
+        [label]="(sent() ? 'contact.sent' : 'contact.send') | translate"
+        padding="12px 28px"
+        class="contact__submit-btn"
+        [disabled]="!contactForm.form.valid || sent()"
+      >
+        <fa-icon [icon]="sent() ? faCheck : faPaperPlane" />
+      </app-shadow-button>
+    </form>
+  </div>
+</section>

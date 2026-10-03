@@ -1,0 +1,47 @@
+@if (href()) {
+  <a
+    [href]="href()"
+    [target]="target()"
+    [rel]="target() === '_blank' ? rel() : null"
+    class="shadow-btn shadow-btn--{{ variant() }}"
+    [class.shadow-btn--full]="fullWidth()"
+    [class.shadow-btn--disabled]="disabled()"
+    [style.--shadow-color]="shadowColor()"
+    (click)="onClick($event)"
+  >
+    <span
+      class="shadow-btn__front"
+      [style.background]="frontColor()"
+      [style.color]="textColor()"
+      [style.padding]="padding()"
+    >
+      <ng-content select="fa-icon, [icon]" />
+      @if (label()) {
+        <span>{{ label() }}</span>
+      }
+      <ng-content />
+    </span>
+  </a>
+} @else {
+  <button
+    [type]="type()"
+    [disabled]="disabled()"
+    class="shadow-btn shadow-btn--{{ variant() }}"
+    [class.shadow-btn--full]="fullWidth()"
+    [style.--shadow-color]="shadowColor()"
+    (click)="onClick($event)"
+  >
+    <span
+      class="shadow-btn__front"
+      [style.background]="frontColor()"
+      [style.color]="textColor()"
+      [style.padding]="padding()"
+    >
+      <ng-content select="fa-icon, [icon]" />
+      @if (label()) {
+        <span>{{ label() }}</span>
+      }
+      <ng-content />
+    </span>
+  </button>
+}

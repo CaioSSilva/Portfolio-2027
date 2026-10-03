@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@use './app/styles/constants.scss';
+
+html {
+  background-color: constants.$background;
+  background-image: radial-gradient(circle, constants.$light-blue 2px, transparent 2px);
+  background-size: 25px 25px;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: 'Syne', sans-serif;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+}
+
+.about-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  gap: 10px;
+
+  app-about,
+  app-about-slider {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 5px);
+    flex: 0 0 calc(50% - 5px);
+    min-width: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    app-about,
+    app-about-slider {
+      width: 100%;
+      flex: none;
+    }
+  }
+}

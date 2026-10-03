@@ -1,0 +1,133 @@
+{
+  "experience": {
+    "title": "Carreira",
+    "workLabel": "Carreira Profissional",
+    "educationLabel": "Formação Acadêmica",
+    "jobs": {
+      "0": {
+        "role": "Desenvolvedor Frontend",
+        "company": "IBM Brasil",
+        "period": "Março 2025 – Atualmente",
+        "location": "Belo Horizonte, MG – Remoto",
+        "bullets": {
+          "0": "Desenvolvimento de aplicações web utilizando Angular e TypeScript",
+          "1": "Atuação como Frontend na entrega do projeto Open Cash Hub Bradesco – plataforma de gestão financeira com pagamentos, recebimentos, conciliação bancária e fluxo de caixa em tempo real",
+          "2": "Implementação de componentes reutilizáveis e integração com APIs RESTful",
+          "3": "Desenvolvimento responsivo com foco em experiência do usuário e acessibilidade",
+          "4": "Colaboração em ambiente Agile/Scrum com equipes multidisciplinares"
+        }
+      },
+      "1": {
+        "role": "Estagiário em Desenvolvimento",
+        "company": "IBM Brasil",
+        "period": "Agosto 2022 – Março 2025",
+        "location": "Belo Horizonte, MG – Remoto",
+        "bullets": {
+          "0": "Desenvolvimento Salesforce (Apex, Lightning Web Components) com impacto direto na satisfação de clientes",
+          "1": "Atuação como QA (Quality Assurance) em Salesforce, garantindo qualidade de código e cumprimento de prazos",
+          "2": "Desenvolvimento e manutenção de aplicações frontend com React e React Native",
+          "3": "Implementação de novas funcionalidades e otimização de código para performance",
+          "4": "Garantia de robustez e segurança nas soluções desenvolvidas"
+        }
+      }
+    },
+    "education": {
+      "0": {
+        "degree": "Bacharelado em Ciência da Computação",
+        "institution": "Universidade FUMEC",
+        "period": "2022 – 2026",
+        "location": "Belo Horizonte, MG",
+        "bullets": {
+          "0": "Estrutura de Dados, Algoritmos e Programação Orientada a Objetos",
+          "1": "Banco de Dados, Sistemas Operacionais e Engenharia de Software",
+          "2": "Desenvolvimento Web e disciplinas aplicadas à indústria"
+        }
+      },
+      "1": {
+        "degree": "Pós-Graduação em",
+        "institution": "...",
+        "period": "Em breve...",
+        "location": "Quem sabe",
+        "bullets": {
+          "0": "Ainda estou decidindo qual área vai receber minha energia"
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "seeAll": "Ver Tudo",
+    "dragHint": "Araste para o lado",
+    "noDescription": "Sem descrição",
+    "noLanguage": "Não definida"
+  },
+  "loader": {
+    "loading": "CARREGANDO"
+  },
+  "topBar": {
+    "headline": "Seu próximo Desenvolvedor Front-End",
+    "nav": {
+      "home": "Início",
+      "about": "Sobre",
+      "projects": "Projetos",
+      "experience": "Carreira",
+      "contact": "Contato"
+    },
+    "cta": "Fale Comigo"
+  },
+  "home": {
+    "tagline": "Experiência,\nExcelência e\nEmpatia.",
+    "cta": "Projetos"
+  },
+  "about": {
+    "title": "Sobre",
+    "p1": "Sempre fui apaixonado por tecnologia e computação, seja desmontando meus brinquedos, consertando celulares ou colocando o dedo na tomada",
+    "p1Strike": "(a última eu não recomendo)",
+    "p2": "Essa é a coisa que eu acordo e durmo pensando desde essa época. Quero que minhas ideias e criações ajudem as pessoas e façam",
+    "p2Underline": "diferença real!",
+    "p3": "Hoje sou formado em",
+    "p3Underline": "Ciência da Computação",
+    "p3Cont": "e com meus anos de experiência na indústria, gero valor para meus clientes com respeito, inovação e criatividade.",
+    "p4": "Gostou? Veja meus projetos!",
+    "cvBtn": "Baixar Currículo",
+    "cvModal": {
+      "title": "Baixar Currículo",
+      "desc": "Escolha o idioma do currículo:",
+      "ptLabel": "🇧🇷 Português",
+      "enLabel": "🇺🇸 English",
+      "ptDownload": "Currículo - Caio Souza Silva.pdf",
+      "enDownload": "Resume - Caio Souza Silva.pdf",
+      "ptUrl": "/docs/Curriculo.pdf",
+      "enUrl": "/docs/Resume.pdf"
+    },
+    "signatureLabel": "Esse sou eu",
+    "signatureLabelOs": "Esse é meu S.O",
+    "signatureLabelRoom": "Esse é meu quarto",
+    "modal": {
+      "title": "Aviso de Compatibilidade",
+      "description": "Este projeto foi desenhado especificamente para telas maiores e não possui adaptação completa para dispositivos móveis. Recomendamos acessá-lo em um computador para a melhor experiência.",
+      "confirm": "Abrir mesmo assim",
+      "cancel": "Voltar"
+    }
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Vamos conversar?",
+    "desc": "Estou sempre aberto a novas oportunidades, colaborações em projetos desafiadores ou apenas uma boa troca de ideias. Fique à vontade para me mandar uma mensagem!",
+    "nameLabel": "Seu Nome",
+    "namePlaceholder": "Como devo te chamar?",
+    "emailLabel": "Seu Email",
+    "emailPlaceholder": "seu.email@exemplo.com",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Escreva sua mensagem aqui...",
+    "send": "Enviar Mensagem",
+    "sent": "Mensagem Pronta!"
+  },
+  "footer": {
+    "privacy": "Privacidade",
+    "privacyTitle": "Privacidade",
+    "privacyLine1": "Bem-vindo à internet em 2026. Sim, coleto seus dados. Cliques, scrolls, hesitações — tudo registrado.",
+    "privacyLine2": "Cookies? Ja instalados. Sua fingerprint vendida para tres corretoras antes de terminar o carregamento.",
+    "privacyLine3": "Não há privacidade."
+  }
+}
