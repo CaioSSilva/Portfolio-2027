@@ -6,11 +6,13 @@ import { BallLoopHandle } from '../../interfaces/ball-loop';
 import { ballLoop } from '../../timelines/ball-loop/ball.loop';
 import { ShadowButton } from '../../shared/components/shadow-button/shadow-button';
 import { Modal } from '../../shared/components/modal/modal';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { faFlag } from '@fortawesome/free-solid-svg-icons';
 
 gsap.registerPlugin(MotionPathPlugin);
 
 @Component({
-  imports: [TranslatePipe, ShadowButton, Modal],
+  imports: [TranslatePipe, ShadowButton, Modal, FaIconComponent],
   selector: 'app-home',
   styleUrl: './home.scss',
   templateUrl: './home.html',
@@ -25,6 +27,8 @@ export class Home implements AfterViewInit, OnDestroy {
   @ViewChild('pathRightMobile') private pathRightMobile!: ElementRef<SVGPathElement>;
 
   protected cvModalOpen = false;
+
+  faFlag = faFlag
 
   protected openCvModal(): void {
     this.cvModalOpen = true;

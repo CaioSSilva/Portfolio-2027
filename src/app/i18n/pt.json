@@ -93,8 +93,8 @@
     "cvModal": {
       "title": "Baixar Currículo",
       "desc": "Escolha o idioma do currículo:",
-      "ptLabel": "🇧🇷 Português",
-      "enLabel": "🇺🇸 English",
+      "ptLabel": "Português",
+      "enLabel": "English",
       "ptDownload": "Currículo - Caio Souza Silva.pdf",
       "enDownload": "Resume - Caio Souza Silva.pdf",
       "ptUrl": "/docs/Curriculo.pdf",
